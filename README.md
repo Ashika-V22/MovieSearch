@@ -3,6 +3,7 @@
 A clean, fast,movie search application built using **HTML**, **CSS**, and **JavaScript** with the **OMDb API**.  
 You can browse trending movies, search for any title, view detailed info in a Prime-Video-style modal, and manage your personal watchlist.
 
+**Live site:https://ashika-v22.github.io/MovieSearch/**
 ---
 
 ## 🚀 Features
