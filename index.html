@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MovieVerse — Netflix Style</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="left">
+      <img src="js/assets/logo.png" alt="logo" class="logo">
+      <nav class="nav">
+        <button id="btn-trending" class="nav-btn active">Trending</button>
+        <button id="btn-popular" class="nav-btn">Popular</button>
+        <button id="btn-toprated" class="nav-btn">Top Rated</button>
+        <button id="btn-watchlist" class="nav-btn">Watchlist</button>
+      </nav>
+    </div>
+    <div id="genreFilters" class="genre-filters">
+      <button class="genre-btn" data-genre="Action">Action</button>
+      <button class="genre-btn" data-genre="Comedy">Comedy</button>
+      <button class="genre-btn" data-genre="Drama">Drama</button>
+      <button class="genre-btn" data-genre="All">All</button>
+  </div>
+  
+    <div class="right">
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Search movies, e.g., Inception" autocomplete="off" />
+        <img id="micBtn" class="mic" src="js/assets/icons/mic.jpg" alt="voice">
+        <img id="searchBtn" class="search-icon" src="js/assets/icons/search.png" alt="search">
+        <ul id="suggestionsList" class="suggestions-list"></ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="rows">
+      <div id="trendingRow" class="row"></div>
+      <div id="popularRow" class="row hidden"></div>
+      <div id="topRatedRow" class="row hidden"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Search Results</h2>
+      <div id="movieContainer" class="movie-grid"></div>
+    </section>
+  </main>
+
+  <!-- Loader -->
+  <div id="loader" class="loader hidden">
+    <img src="js/assets/loader.gif" alt="loading">
+  </div>
+
+  <!-- Movie Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn">✕</button>
+      <div id="modalBody"></div>
+      <button id="addWatchlist" class="watchlist-btn">Add to Watchlist</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

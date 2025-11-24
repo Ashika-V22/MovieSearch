@@ -1,0 +1,122 @@
+/* Base & reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+body { background-color:#105937; color: #080000; }
+
+/* Header */
+.site-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 40px; background-color: #209961; position: sticky; top: 0; z-index: 100;
+}
+.site-header .left { display: flex; align-items: center; gap: 20px; }
+.logo { height: 40px; }
+.nav { display: flex; gap: 15px; }
+.nav-btn {
+  background: none; border: none; color: #fff; font-size: 16px;
+  cursor: pointer; padding: 5px 10px; transition: 0.2s;
+}
+.nav-btn:hover, .nav-btn.active { color: #030303; }
+.site-header .right { display: flex; align-items: center; gap: 15px; }
+
+/* Search */
+.search-box { position: relative; }
+.search-box input {
+  padding: 6px 35px 6px 10px; border-radius: 20px; border: none; outline: none;
+  width: 200px; transition: width 0.3s ease;
+}
+.search-box input:focus { width: 300px; }
+.search-icon, .mic { width: 20px; height: 20px; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; }
+.search-icon { right: 10px; }
+.mic { right: 35px; }
+.suggestions-list {
+  position: absolute; top: 35px; background: #fdfafa; list-style: none;
+  width: 100%; border-radius: 4px; max-height: 150px; overflow-y: auto; z-index: 10;
+}
+.suggestions-list li { padding: 5px 10px; cursor: pointer; }
+.suggestions-list li:hover { background-color: #f4eaea; }
+
+/* Rows & Movie Grid */
+.rows { padding: 20px 40px; }
+.row { display: flex; overflow-x: auto; gap: 10px; padding: 10px 0; scroll-behavior: smooth; }
+.row::-webkit-scrollbar { height: 8px; }
+.row::-webkit-scrollbar-thumb { background-color: #f8f6f6; border-radius: 4px; }
+.movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; padding: 10px 40px; }
+.movie-card {
+  background-color: #d4f3c5; border-radius: 8px; overflow: hidden; cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.movie-card:hover { transform: scale(1.05); box-shadow: 0 0 10px #fc0404; }
+.movie-card img { width: 100%; display: block; }
+
+/* Loader */
+.loader { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.loader.hidden { display: none; }
+.hidden { display: none !important; }
+
+/* Modal */
+.modal { position: fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(247, 205, 205, 0.85);
+  display: flex; justify-content: center; align-items: center;
+}
+.modal-content { background-color: #c6f8c3; padding: 200px; border-radius: 10px; width: 80%; max-width: 700px;
+  position: relative; display: flex; flex-direction: column; align-items: center;
+}
+.close-btn { position: absolute; top: 10px; right: 15px; background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; }
+.watchlist-btn { margin-top: 15px; padding: 8px 15px; background-color: #e50914; border: none; color: #fff; cursor: pointer; border-radius: 4px; font-size: 16px; }
+.watchlist-btn:hover { background-color: #f40612; }
+
+/* Section Titles */
+.section-title { font-size: 20px; margin: 15px 40px 5px; }
+
+.close-btn {
+  position: absolute;
+  bottom: 750px;
+  right: 60px;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 30px;   /* bigger so it’s easy to see */
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 300;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #e50914;   /* Netflix red hover */
+}
+.trailer-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #555;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.trailer-btn:hover {
+  background-color: #e50914; /* Netflix red hover */
+}
+.genre-filters {
+  display: flex;
+  gap: 10px;
+  padding: 10px 40px;
+  flex-wrap: wrap;
+}
+
+.genre-btn {
+  background: none;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.genre-btn:hover,
+.genre-btn.active {
+  background-color: #e50914;
+  border-color: #e50914;
+}
